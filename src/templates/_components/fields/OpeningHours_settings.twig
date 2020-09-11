@@ -1,0 +1,42 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * SimpleOpeningHours plugin for Craft CMS
+ *
+ * OpeningHours Field Settings
+ *
+ * @author    Miroslaw Farajewicz
+ * @copyright Copyright (c) 2020 Miroslaw Farajewicz
+ * @link      https://www.gearrilla.com/en/
+ * @package   SimpleOpeningHours
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% for error in field.getErrorSummary(true) %}
+    <div class="error">{{ error }}</div>
+{%endfor%}
+{{ forms.textField({
+    label: 'Default open duration',
+    instructions: 'Specify how long last typical working day. It will autocomplete closing hour.',
+    id: 'openDuration',
+    name: 'openDuration',
+    value: field['openDuration']})
+}}
+<div>
+    {{ forms.checkbox({
+        label: 'Display "Closed" option for quick marking day as closed',
+        name: 'closedOption',
+        checked: field['closedOption']})
+    }}
+</div>
+<div>
+    {{ forms.checkbox({
+        label: 'Display "24H" option for quick marking day as open all time',
+        name: 'allNightOption',
+        checked: field['allNightOption']})
+    }}
+</div>
+

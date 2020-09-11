@@ -1,0 +1,23 @@
+/**
+ * SimpleOpeningHours plugin for Craft CMS
+ *
+ * OpeningHours Field CSS
+ *
+ * @author    Miroslaw Farajewicz
+ * @copyright Copyright (c) 2020 Miroslaw Farajewicz
+ * @link      https://www.gearrilla.com/en/
+ * @package   SimpleOpeningHours
+ * @since     1.0.0
+ */
+.settings-table {
+    width:100%;
+}
+.settings-table > div {
+    width:25%;
+    float:left;
+}
+.day-settings-container {
+    float:left;
+    width:100%;
+    margin: 5px 0px;
+}

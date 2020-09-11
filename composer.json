@@ -1,0 +1,46 @@
+{
+    "name": "mfarajewicz/simple-opening-hours",
+    "description": "Simple plugin for storing place opening hours",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "simpleopeninghours"
+    ],
+    "support": {
+        "docs": "https://github.com/mfarajewicz/simple-opening-hours/blob/master/README.md",
+        "issues": "https://github.com/mfarajewicz/simple-opening-hours/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Miroslaw Farajewicz",
+            "homepage": "https://www.gearrilla.com/en/"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "require-dev": {
+      "craftcms/cms": "^3.2.0",
+      "codeception/codeception": "^4.1",
+      "vlucas/phpdotenv": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "mfarajewicz\\simpleopeninghours\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "SimpleOpeningHours",
+        "handle": "simple-opening-hours",
+        "developer": "Miroslaw Farajewicz",
+        "developerUrl": "https://www.gearrilla.com/en/",
+        "documentationUrl": "https://github.com/mfarajewicz/simple-opening-hours/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/mfarajewicz/simple-opening-hours/master/CHANGELOG.md",
+        "class": "mfarajewicz\\simpleopeninghours\\SimpleOpeningHours"
+    }
+}

@@ -1,0 +1,65 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * SimpleOpeningHours plugin for Craft CMS 3.x
+ *
+ * OpeningHours Field Input
+ *
+ * @author    Miroslaw Farajewicz
+ * @copyright Copyright (c) 2020 Miroslaw Farajewicz
+ * @link      https://www.gearrilla.com/en/
+ * @package   SimpleOpeningHours
+ * @since     1.0.0
+ */
+#}
+<style>
+
+</style>
+
+{% import "_includes/forms" as forms %}
+
+<div class="days-settings-header settings-table">
+    <div>Day</div>
+    <div>Opening hour</div>
+    <div>Closing hour</div>
+    {% if (field.closedOption or field.allNightOption)  %}
+        <div>Additional options</div>
+    {% endif %}
+</div>
+</div>
+{% for i, day in days %}
+    <br>
+    <div class="day-settings-container settings-table">
+        <div>
+            {{ day.name }}
+        </div>
+        <div>
+            {{ forms.select({
+                options: availableHours,
+                inputAttributes: {
+                    class: 'startPicker',
+                },
+                name: name ~ "[" ~ i ~"][start]",
+                value: field.fields[i]['start']})
+            }}
+        </div>
+        <div>
+            {{ forms.select({
+                options: availableHours,
+                name: name ~ "[" ~ i ~"][end]",
+                inputAttributes: {
+                    class: 'endPicker',
+                },
+                value: field.fields[i]['end']})
+            }}
+        </div>
+        <div>
+            {% if (field.closedOption) %}
+                <button type="button" class="btn btn-secondary closedChecker">Closed</button>
+            {% endif %}
+            {% if (field.allNightOption) %}
+                <button type="button" class="btn btn-secondary allNightChecker">24H</button>
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}
